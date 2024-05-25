@@ -29,6 +29,8 @@ This Express.js API is used with Sequelize to interact with a PostgreSQL databas
 MIT
 
 ## Installation 
+Be sure to have MongoDB installed on your machine. Follow the [MongoDB installation guide on The Full-Stack Blog](https://coding-boot-camp.github.io/full-stack/mongodb/how-to-install-mongodb) to install MongoDB locally.
+
 * Clone the respository to the Github listed below. 
 * Command Line: npm install
 * Command Line: npm run seed;
