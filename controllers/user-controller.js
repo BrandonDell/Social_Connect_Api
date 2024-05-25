@@ -44,7 +44,18 @@ const userController = {
     }
   },
   // update a user
-  async updateUser(req, res) {},
+  async updateUser(req, res) {
+    try {
+      const user = await User.findByIdAndUpdate(req.params.userid, req.body, { new: true, runValidators: true }
+      );
+      if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+      res.json(user);
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+      }
+    },
   // delete user (BONUS: and delete associated thoughts)
   async deleteUser(req, res) {
     try {
