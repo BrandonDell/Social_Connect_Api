@@ -29,18 +29,22 @@ This Express.js API is used with Sequelize to interact with a PostgreSQL databas
 MIT
 
 ## Installation 
--Clone the respository to the Github listed below. 
--Postgres: psql -U postgres
--Postgres: run schema.js:  \i db/schema.js
--Postrgres: quit \q
--Command Line: npm run seed;
--Command Line: npm start;
--App Listening on port 3001
--Command Line Installation: node server.js;
-
+* Clone the respository to the Github listed below. 
+* Command Line: npm install
+* Command Line: npm run seed;
+* Command Line: npm start;
+* App Listening on port 3001
 
 ## Run  
-Insomnia: run all prompts: Categories, Products and Tags all need GET ALL, GET ONE, POST, PUT, and DELETE methods shown in the video example
+Insomnia: run all prompts: GET ALL, GET ONE, POST, PUT, and DELETE methods shown in the video example which API routes for the specific funcionalities:
+* GET /api/users (retrieves all users)
+* GET /api/users/:id (retrieves a single user by its '_id' and populates thought and friend data)
+* POST /api/users (creates a new user)
+* PUT /api/users/:id (updates a user by its '_id')
+* DELETE /api/users/:id (removes a user by its '_id' and the Bonus: removes a user's thought when deleted)
+
+
+
 
 ## Links
 
