@@ -27,7 +27,6 @@ const userController = {
 
       res.json({
         user,
-        grade: await grade(req.params.userId),
       });
     } catch (err) {
       console.log(err);
@@ -40,13 +39,14 @@ const userController = {
       const user = await User.create(req.body);
       res.json(user);
     } catch (err) {
+      console.log(err);
       res.status(500).json(err);
     }
   },
   // update a user
   async updateUser(req, res) {
     try {
-      const user = await User.findByIdAndUpdate(req.params.userid, req.body, { new: true, runValidators: true }
+      const user = await User.findByIdAndUpdate(req.params.userId, req.body, { new: true, runValidators: true }
       );
       if (!user) {
         return res.status(404).json({ message: 'User not found' });
@@ -59,7 +59,7 @@ const userController = {
   // delete user (BONUS: and delete associated thoughts)
   async deleteUser(req, res) {
     try {
-      const user = await user.findOneAndRemove({ _id: req.params.userId });
+      const user = await User.findOneAndDelete({ _id: req.params.userId });
 
       if (!user) {
         return res.status(404).json({ message: 'No such user exists' });
@@ -90,9 +90,9 @@ const userController = {
     console.log(req.body);
 
     try {
-      const user = await user.findOneAndUpdate(
+      const user = await User.findOneAndUpdate(
         { _id: req.params.userId },
-        { $addToSet: { assignments: req.body } },
+        { $addToSet: { friends: req.params.friendId } },
         { runValidators: true, new: true }
       );
 
@@ -104,15 +104,16 @@ const userController = {
 
       res.json(user);
     } catch (err) {
+      console.log(err);
       res.status(500).json(err);
     }
   },
   // remove friend from friend list
   async removeFriend(req, res) {
     try {
-      const user = await user.findOneAndUpdate(
+      const user = await User.findOneAndUpdate(
         { _id: req.params.userId },
-        { $pull: { user: { userId: req.params.userId } } },
+        { $pull: { friends: req.params.friendId } },
         { runValidators: true, new: true }
       );
 
@@ -124,6 +125,7 @@ const userController = {
 
       res.json(user);
     } catch (err) {
+      console.log(err);
       res.status(500).json(err);
     }
   },

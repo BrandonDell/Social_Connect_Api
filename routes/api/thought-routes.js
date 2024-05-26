@@ -18,8 +18,8 @@ router
     .put(updateThought)
     .delete(deleteThought);
 // /api/thoughts/:thoughtId/reactions
-router.route('/:thoughtId/reacton').post(addReaction)
+router.route('/thoughts/:thoughtId/reacton').post(addReaction)
 // /api/thoughts/:thoughtId/reactions/:reactionId
-router.route('/:thoughtId/reacton').delete(removeReaction)
+router.route('/thoughts/:thoughtId/reacton').delete(removeReaction)
 
 module.exports = router;

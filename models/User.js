@@ -17,26 +17,25 @@ const userSchema = new Schema(
     thoughts: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Thought',
+        ref: 'thought',
       },
     ],
-    fiends: [
+    friends: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'User',
+        ref: 'user',
       },
     ],
   },
   {
     toJSON: { virtuals: true },
-    toObject: { virtuals: true },
+    // toObject: { virtuals: true },
   }
 );
 // Create a virtual called friendCount that retrieves the length of the user's friends array field on query.
-userSchema.virtual('fiendCount').get(function () {
+userSchema.virtual('friendCount').get(function () {
     return this.friends.length;
 })
 // Create the User Model
-const User = Mongoose.model('user', userSchema);
-
+const User = model('user', userSchema);
 module.exports = User;
