@@ -85,6 +85,7 @@ const thoughtController = {
       );
 
       if (!thought) {
+        console.log(err)
         return res
           .status(404)
           .json({ message: 'No thought found with that ID' });

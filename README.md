@@ -17,13 +17,13 @@ This application will help you organize a data base with limitless categories, p
 
  
 ## Motivation
-The motivation to create this database is to build the back end for an e-commerce site which allows businesses and consumers to easily engage in online buying and selling of many different products.
+The motivation to create this database is to build the back end for a social media company that allows them to create, read, update, and delete users and friends. 
 
 ## What does it solve and provide?
-This database will help an e-commerce company mantain and organzie product and categories to offer potentail customers. 
+This database will help an social media company mantain and organzie users and friends data and offer comments and thoughts.
 
 ## Features
-This Express.js API is used with Sequelize to interact with a PostgreSQL database.
+We will be using express and mongoose 
 
 ## License
 MIT
@@ -33,7 +33,6 @@ Be sure to have MongoDB installed on your machine. Follow the [MongoDB installat
 
 * Clone the respository to the Github listed below. 
 * Command Line: npm install
-* Command Line: npm run seed;
 * Command Line: npm start;
 * App Listening on port 3001
 
@@ -45,17 +44,14 @@ Insomnia: run all prompts: GET ALL, GET ONE, POST, PUT, and DELETE methods shown
 * PUT /api/users/:id (updates a user by its '_id')
 * DELETE /api/users/:id (removes a user by its '_id' and the Bonus: removes a user's thought when deleted)
 
-
-
-
 ## Links
 
 GitHub Repository: https://github.com/BrandonDell/Social_Connect_Api
 
-Google Drive Video:
+Google Drive Video: https://drive.google.com/file/d/1oyq2LyUUsoV70HUipisp_lrk4m_wB-U-/view
 
 ## Image
-![DellCioppia](./)
+![DellCioppia](./images/Screenshot%202024-05-28%20at%2011.13.19%20PM.png)
 
 ## Credits
 -UCF Coding Bootcamp Instructor and TA's
